@@ -13,7 +13,7 @@ For ease of use, we stored the dataset on Google drive and mounted the drive on 
 
 ## Model Architecture 
 
-<img src="neural_translation_model_and_key.png">
+<img src="images/neural_translation_model_and_key.png">
 
 The custom model consists of an encoder RNN and a decoder RNN. The encoder takes words of an English sentence as input, and uses a pre-trained word embedding to embed the words into a 128-dimensional space. To indicate the end of the input sentence, a special end token (in the same 128-dimensional space) is passed in as an input. This token is a TensorFlow Variable that is learned in the training phase (unlike the pre-trained word embedding, which is frozen).
 
@@ -52,7 +52,7 @@ This embedding takes a batch of text tokens in a 1-D tensor of strings as input.
 
 First we create a custom layer to add the learned end token embedding to the encoder model
 
-<img src="neural_translation_model_encoder.png">
+<img src="images/neural_translation_model_encoder.png">
 
 #### Building the custom layer
 
@@ -74,7 +74,7 @@ The encoder network follows the schematic diagram above. We then build the RNN e
 ## Building the decoder network
 The decoder network follows the schematic diagram below. 
 
-<img src="neural_translation_model_decoder.png">
+<img src="images/neural_translation_model_decoder.png">
 
 * Using Model subclassing, we build the decoder network according to the following spec:
     * The initializer would create the following layers:
